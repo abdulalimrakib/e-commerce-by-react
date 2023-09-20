@@ -1,11 +1,11 @@
-import Card from "./components/Card";
+import Shop from "./components/Shop";
 import Header from "./components/Header";
 
 function App() {
   return (
     <>
       <Header></Header>
-      <Card></Card>
+      <Shop></Shop>
     </>
   );
 }
