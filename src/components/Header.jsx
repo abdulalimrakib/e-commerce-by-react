@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
 
 const Header = () => {
@@ -9,15 +10,15 @@ const Header = () => {
         </div>
         <div className="flex justify-center items-center">
           <nav className="text-center">
-            <a className="px-2 py-4 font-bold hover:bg-fuchsia-900 " href="/shop">
+            <Link className="px-2 py-4 font-bold hover:bg-fuchsia-900 " to="/shop">
               Shop
-            </a>
-            <a className="px-2 py-4 font-bold hover:bg-fuchsia-900" href="/order-review">
+            </Link>
+            <Link className="px-2 py-4 font-bold hover:bg-fuchsia-900" to="/order-review">
               Order Review
-            </a>
-            <a className="px-2 py-4 font-bold hover:bg-fuchsia-900" href="/manage-inventory-here">
+            </Link>
+            <Link className="px-2 py-4 font-bold hover:bg-fuchsia-900" to="/inventory">
               Manage Inventory Here
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
