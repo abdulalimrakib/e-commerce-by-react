@@ -1,23 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SideArea = (props) => {
   let orderTotal;
   let estimatedTax;
   let totalPriceBeforeTex;
-  let shippingCharge = 7.50;
+  let shippingCharge = 7.5;
   let totalPrice = 0;
 
   for (let i = 0; i < props.cartProduct.length; i++) {
     totalPrice = totalPrice + props.cartProduct[i].price;
   }
 
-  if(totalPrice<=0 || totalPrice >=150){
+  if (totalPrice <= 0 || totalPrice >= 150) {
     shippingCharge = 0;
   }
 
   totalPriceBeforeTex = totalPrice + shippingCharge;
 
-  estimatedTax = (5/100)*totalPriceBeforeTex;
+  estimatedTax = (5 / 100) * totalPriceBeforeTex;
 
   orderTotal = totalPriceBeforeTex + estimatedTax;
 
@@ -44,12 +45,16 @@ const SideArea = (props) => {
           <h5>${shippingCharge.toFixed(2)}</h5>
           <h5>${totalPriceBeforeTex.toFixed(2)}</h5>
           <h5>${estimatedTax.toFixed(2)}</h5>
-          <h3 className="text-[22px] font-bold text-red-600 pt-2">${orderTotal.toFixed(2)}</h3>
+          <h3 className="text-[22px] font-bold text-red-600 pt-2">
+            ${orderTotal.toFixed(2)}
+          </h3>
         </div>
       </div>
-      <button className="w-full bg-fuchsia-600 hover:bg-fuchsia-700 font-bold text-white rounded-lg py-1 my-2">
-        Order Review
-      </button>
+      <Link to="/order-review">
+        <button className="w-full bg-fuchsia-600 hover:bg-fuchsia-700 font-bold text-white rounded-lg py-1 my-2">
+          Order Review
+        </button>
+      </Link>
     </div>
   );
 };
